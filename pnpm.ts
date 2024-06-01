@@ -6,7 +6,7 @@ pathFinder.set("pnpm", {
     windows: [
         ".\\node_modules\\.bin\\pnpm.cmd",
         "${APPDATA}\\npm\\pnpm.cmd",
-        "${APPDATALOCAL}\\nvs\\default\\pnpm.cmd",
+        "${LOCALAPPDATA}\\nvs\\default\\pnpm.cmd",
     ],
     linux: [
         "/usr/bin/pnpm",

@@ -3,7 +3,6 @@ import { remove, writeTextFile } from "@gnome/fs";
 import { pathFinder } from "jsr:@gnome/exec@^0.4.1/path-finder";
 import { assert as ok, assertEquals as equals } from "jsr:@std/assert@0.225.3";
 
-const EOL = Deno.build.os === "windows" ? "\r\n" : "\n";
 const hasTsx = pathFinder.findExeSync("tsx") !== undefined;
 
 Deno.test({
@@ -11,7 +10,7 @@ Deno.test({
     ignore: !hasTsx,
     fn: async () => {
         const result = await tsx("console.log('Hello, World!');");
-        equals(await result.text(), `Hello, World!${EOL}`);
+        equals(await result.text(), `Hello, World!\n`);
         equals(result.code, 0);
     },
 });
@@ -39,15 +38,15 @@ Deno.test({
 
         try {
             const result = await tsx("test.ts");
-            equals(await result.text(), `Hello, World!${EOL}`);
+            equals(await result.text(), `Hello, World!\n`);
             equals(result.code, 0);
 
             const result2 = await tsx("test.mts");
-            equals(await result2.text(), `Hello, World!${EOL}`);
+            equals(await result2.text(), `Hello, World!\n`);
             equals(result2.code, 0);
 
             const result3 = await tsx("test.cts");
-            equals(await result3.text(), `Hello, World!${EOL}`);
+            equals(await result3.text(), `Hello, World!\n`);
             equals(result3.code, 0);
         } finally {
             await remove("test.ts");

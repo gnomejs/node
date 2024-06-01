@@ -2,11 +2,9 @@ import { node, nodeCli } from "./node.ts";
 import { remove, writeTextFile } from "@gnome/fs";
 import { assert as ok, assertEquals as equals } from "jsr:@std/assert@0.225.3";
 
-const EOL = Deno.build.os === "windows" ? "\r\n" : "\n";
-
 Deno.test("node", async () => {
     const result = await node("console.log('Hello, World!');");
-    equals(await result.text(), `Hello, World!${EOL}`);
+    equals(await result.text(), `Hello, World!\n`);
     equals(result.code, 0);
 });
 
@@ -24,15 +22,15 @@ Deno.test("files", async () => {
 
     try {
         const result = await node("test.js");
-        equals(await result.text(), `Hello, World!${EOL}`);
+        equals(await result.text(), `Hello, World!\n`);
         equals(result.code, 0);
 
         const result2 = await node("test.mjs");
-        equals(await result2.text(), `Hello, World!${EOL}`);
+        equals(await result2.text(), `Hello, World!\n`);
         equals(result2.code, 0);
 
         const result3 = await node("test.cjs");
-        equals(await result3.text(), `Hello, World!${EOL}`);
+        equals(await result3.text(), `Hello, World!\n`);
         equals(result3.code, 0);
     } finally {
         await remove("test.js");

@@ -5,7 +5,7 @@ pathFinder.set("npx", {
     name: "npx",
     windows: [
         "${ProgramFiles}\\nodejs\\npx.cmd",
-        "${APPDATALOCAL}\\nvs\\default\\npx.cmd",
+        "${LOCALAPPDATA}\\nvs\\default\\npx.cmd",
     ],
     linux: [
         "/usr/bin/npx",

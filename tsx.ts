@@ -8,7 +8,7 @@ pathFinder.set("tsx", {
     windows: [
         ".\\node_modules\\.bin\\tsx.cmd",
         "${APPDATA}\\npm\\tsx.cmd",
-        "${APPDATALOCAL}\\nvs\\default\\tsx.cmd",
+        "${LOCALAPPDATA}\\nvs\\default\\tsx.cmd",
     ],
     linux: [
         "./node_modules/.bin/tsx",

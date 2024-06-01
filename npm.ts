@@ -5,7 +5,7 @@ pathFinder.set("npm", {
     name: "npm",
     windows: [
         "${ProgramFiles}\\nodejs\\npm.cmd",
-        "${APPDATALOCAL}\\nvs\\default\\npm.cmd",
+        "${LOCALAPPDATA}\\nvs\\default\\npm.cmd",
     ],
     linux: [
         "/usr/bin/npm",

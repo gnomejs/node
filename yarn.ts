@@ -6,7 +6,7 @@ pathFinder.set("yarn", {
     windows: [
         ".\\node_modules\\.bin\\yarn.cmd",
         "${APPDATA}\\npm\\yarn.cmd",
-        "${APPDATALOCAL}\\nvs\\default\\yarn.cmd",
+        "${LOCALAPPDATA}\\nvs\\default\\yarn.cmd",
     ],
     linux: [
         "/usr/bin/yarn",
