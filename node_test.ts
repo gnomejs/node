@@ -1,4 +1,5 @@
-import { node, nodeCli } from "./node.ts"
+import { node, nodeCli } from "./node.ts";
+import { remove, writeTextFile } from "@gnome/fs";
 import { assertEquals as equals, assert as ok } from "jsr:@std/assert@0.225.3"
 
 const EOL = Deno.build.os === "windows" ? "\r\n" : "\n";
@@ -13,4 +14,30 @@ Deno.test("nodeCli", async () => {
     const result = await nodeCli("--version");
     equals(result.code, 0);
     ok(result.text().startsWith("v"));
+});
+
+
+Deno.test("files", async () => {
+    const script  = `console.log('Hello, World!');`;
+    await writeTextFile("test.js", script);
+    await writeTextFile("test.mjs", script);
+    await writeTextFile("test.cjs", script);
+
+    try {
+        const result = await node("test.js");
+        equals(await result.text(), `Hello, World!${EOL}`);
+        equals(result.code, 0);
+
+        const result2 = await node("test.mjs");
+        equals(await result2.text(), `Hello, World!${EOL}`);
+        equals(result2.code, 0);
+
+        const result3 = await node("test.cjs");
+        equals(await result3.text(), `Hello, World!${EOL}`);
+        equals(result3.code, 0);
+    } finally {
+        await remove("test.js");
+        await remove("test.mjs");
+        await remove("test.cjs");
+    }
 });

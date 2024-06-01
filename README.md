@@ -9,7 +9,10 @@
 ## Overview
 
 The `node-cli` module provides a simple way to execute
-inline Javascript or JavaScript files.
+inline Javascript or JavaScript files with nodejs.
+
+The module includes functions for node, nodeCli, npm,
+npx, yarn, pnpm, tsxCli, and tsx.
 
 The module relies upon the @gnome/exec module and
 has the same basic usage as the `Command` and `ShellCommand` class.
