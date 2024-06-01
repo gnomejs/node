@@ -1,13 +1,13 @@
 import { node, nodeCli } from "./node.ts";
 import { remove, writeTextFile } from "@gnome/fs";
-import { assertEquals as equals, assert as ok } from "jsr:@std/assert@0.225.3"
+import { assert as ok, assertEquals as equals } from "jsr:@std/assert@0.225.3";
 
 const EOL = Deno.build.os === "windows" ? "\r\n" : "\n";
 
 Deno.test("node", async () => {
     const result = await node("console.log('Hello, World!');");
     equals(await result.text(), `Hello, World!${EOL}`);
-    equals(result.code, 0)
+    equals(result.code, 0);
 });
 
 Deno.test("nodeCli", async () => {
@@ -16,9 +16,8 @@ Deno.test("nodeCli", async () => {
     ok(result.text().startsWith("v"));
 });
 
-
 Deno.test("files", async () => {
-    const script  = `console.log('Hello, World!');`;
+    const script = `console.log('Hello, World!');`;
     await writeTextFile("test.js", script);
     await writeTextFile("test.mjs", script);
     await writeTextFile("test.cjs", script);

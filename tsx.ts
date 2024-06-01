@@ -92,7 +92,6 @@ export class TsxShellCommand extends ShellCommand {
     }
 }
 
-
 /**
  * Executes the tsx command line using the TsxCliCommand class.
  * @param args The command arguments.

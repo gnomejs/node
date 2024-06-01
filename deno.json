@@ -3,9 +3,12 @@
     "version": "0.1.0",
     "exports": {
         ".": "./mod.ts",
-        "./python": "./python.ts",
-        "./pip": "./pip.ts",
-        "./poetry": "./poetry.ts"
+        "./node": "./node.ts",
+        "./npm": "./npm.ts",
+        "./npx": "./npx.ts",
+        "./pnpm": "./pnpm.ts",
+        "./tsx": "./tsx.ts",
+        "./yarn": "./yarn.ts"
     },
     "compilerOptions": {
         "lib": ["deno.worker"]
@@ -27,9 +30,12 @@
     "publish": {
         "include": [
             "mod.ts",
-            "python.ts",
-            "pip.ts",
-            "poetry.ts",
+            "node.ts",
+            "npm.ts",
+            "npx.ts",
+            "pnpm.ts",
+            "tsx.ts",
+            "yarn.ts",
             "README.md",
             "LICENSE.md",
             "deno.json"

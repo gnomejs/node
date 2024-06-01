@@ -100,20 +100,20 @@ export class NodeShellCommand extends ShellCommand {
  * @param args The command arguments.
  * @param options The command options.
  * @returns a new instance of the NodeCliCommand class.
- * 
+ *
  * @example
  * ```ts
  * import { nodeCli } from "@gnome/node-cli";
- * 
+ *
  * const result = await nodeCli("--version");
  * console.log(result.code);
  * console.log(result.text());
  * ```
- * 
+ *
  * @example
  * ```ts
  * import { nodeCli } from "@gnome/node-cli";
- * 
+ *
  * /// execute the node command and writes the version to stdout.
  * await nodeCli(["--version"]).run();
  * ```
