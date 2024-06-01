@@ -27,9 +27,4 @@
  * [MIT License](./LICENSE.md)
  * @module
  */
-export * from "./node.ts";
-export * from "./npm.ts";
-export * from "./npx.ts";
-export * from "./pnpm.ts";
-export * from "./tsx.ts";
-export * from "./yarn.ts";
+export * from "./cli.ts";

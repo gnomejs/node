@@ -1,14 +1,19 @@
 {
-    "name": "@gnome/python-cli",
-    "version": "0.1.0",
+    "name": "@gnome/node-cli",
+    "version": "0.0.0",
     "exports": {
         ".": "./mod.ts",
-        "./node": "./node.ts",
-        "./npm": "./npm.ts",
-        "./npx": "./npx.ts",
-        "./pnpm": "./pnpm.ts",
-        "./tsx": "./tsx.ts",
-        "./yarn": "./yarn.ts"
+        "./cli": "./cli.ts",
+        "./npm": "./npm/mod.ts",
+        "./npm/cli": "./npm/cli.ts",
+        "./npx": "./npm/mod.ts",
+        "./npx/cli": "./npx/cli.ts",
+        "./pnpm": "./pnpm/mod.ts",
+        "./pnpm/cli": "./pnpm/cli.ts",
+        "./tsx": "./tsx/mod.ts",
+        "./tsx/cli": "./tsx/cli.ts",
+        "./yarn": "./yarn/mod.ts",
+        "./yarn/cli": "./yarn/cli.ts"
     },
     "compilerOptions": {
         "lib": ["deno.worker"]
@@ -30,12 +35,17 @@
     "publish": {
         "include": [
             "mod.ts",
-            "node.ts",
-            "npm.ts",
-            "npx.ts",
-            "pnpm.ts",
-            "tsx.ts",
-            "yarn.ts",
+            "cli.ts",
+            "npm/mod.ts",
+            "npm/cli.ts",
+            "npx/mod.ts",
+            "npx/cli.ts",
+            "pnpm/mod.ts",
+            "pnpm/cli.ts",
+            "tsx/mod.ts",
+            "tsx/cli.ts",
+            "yarn/mod.ts",
+            "yarn/cli.ts",
             "README.md",
             "LICENSE.md",
             "deno.json"

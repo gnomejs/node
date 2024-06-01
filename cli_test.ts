@@ -1,4 +1,4 @@
-import { node, nodeCli } from "./node.ts";
+import { node, nodeCli } from "./cli.ts";
 import { remove, writeTextFile } from "@gnome/fs";
 import { assert as ok, assertEquals as equals } from "jsr:@std/assert@0.225.3";
 

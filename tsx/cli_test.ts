@@ -1,4 +1,4 @@
-import { tsx, tsxCli } from "./tsx.ts";
+import { tsx, tsxCli } from "./cli.ts";
 import { remove, writeTextFile } from "@gnome/fs";
 import { pathFinder } from "jsr:@gnome/exec@^0.4.1/path-finder";
 import { assert as ok, assertEquals as equals } from "jsr:@std/assert@0.225.3";
